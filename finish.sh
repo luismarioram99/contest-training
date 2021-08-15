@@ -2,7 +2,6 @@
 
 git add * 
 
-
 if [ "$2" == "" ]
 then
   git commit -m "Finished contest $1"
