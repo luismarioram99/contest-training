@@ -7,23 +7,16 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-vi slices({6,8,10});
-vi times({15,20,25});
-
 void solve(){
   ll n; 
   cin >> n;
 
-  ll ans = 0;
+  n += n%2;
+  n = max(n, 6LL);
 
-  for(int i = 0; i < 3; i++){
-
-    ans += (n/slices[i])*times[i];
-
-    n %= slices[i];
-
-  }
+  ll ans = (n/2)*5;
   cout << ans << endl;
+
 }
 
 int main() {
