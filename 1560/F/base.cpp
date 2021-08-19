@@ -7,38 +7,58 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
-void solve1(string s) {
+string solve1(string s) {
 
-  int main_dig = s[0] - '0';
-  int dig;
-  bool flag = false;
-  for (int i = 1; i < (int)s.size(); i++) {
+  int n = s.size();
+  string res;
+  for(int i = 9; i >= 1; i--){
+    
+    string k(n, ('0' + i));
 
-    dig = s[i] - '0';
-    if (dig > main_dig)
-      flag = true;
+    if(k >= s) res = k;
   }
+  return res;
 
-  main_dig += flag;
-
-  for (int i = 0; i < (int)s.size(); i++) {
-    cout << main_dig;
-  }
-  cout << endl;
 }
 
-void solve2(string s) {
+string solve2(string s) {
 
-  int d1 = s[0] - '0';
-  int d2;
-  int pos2;
-  for (int i = 0; i < (int)s.size(); i++) {
-    if (s[i] - '0' != d1) {
-      d2 = s[i] - '0' pos2 = ;
+  string res = solve1(s);
+
+  for(char a = '0'; a <= '9'; a++){
+    for(char b = '0'; b <= '9'; b++){
+
+      bool ok = true;
+
+      for(int i = 0; i < (int)s.size(); i++){
+
+        if(s[i] < b){
+
+          string t = s; 
+
+          if(t[i] < a) t[i] = a;
+          else t[i] = b;
+           
+          for(int j = i + 1; j < (int)s.size(); j++){
+            t[j] = a;
+          }
+
+          if(res > t) res = t;
+
+        }
+        if(s[i] != a && s[i] != b){
+          ok = false;
+          break;
+        }
+      }
+
+      if(ok) return s;
+
     }
+
   }
 
-  for (int i = 0)
+  return res;
 }
 
 void solve() {
@@ -46,10 +66,11 @@ void solve() {
   int k;
   cin >> s >> k;
 
+
   if (k == 1) {
-    solve1(s, k);
+    cout << solve1(s) << endl; 
   } else {
-    cout << "-" << endl;
+    cout << solve2(s) << endl;
   }
 }
 
