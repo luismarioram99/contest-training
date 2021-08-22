@@ -119,5 +119,18 @@
     "prefix": ["beginend", "begin"],
     "body": ["${1:v}.begin(), ${1:v}.end()"],
     "description": "beginend"
+  },
+  "8 tiles diferentials": {
+    "prefix": ["8dx", "8dy", "dif"],
+    "body": [
+      "int dx[] = {0, 1, 1, 1, 0, -1, -1, -1};",
+      "int dy[] = {-1, -1, 0, 1, 1, 1, 0, -1};"
+    ],
+    "description": "8 tiles diferentials"
+  },
+  "4 tiles diferentials": {
+    "prefix": ["4dx", "4dy", "dif"],
+    "body": ["int dx[] = {-1, 0, 1, 0};", "int dy[] = {0, 1, 0, -1};"],
+    "description": "4 tiles diferentials"
   }
 }
