@@ -132,5 +132,29 @@
     "prefix": ["4dx", "4dy", "dif"],
     "body": ["int dx[] = {-1, 0, 1, 0};", "int dy[] = {0, 1, 0, -1};"],
     "description": "4 tiles diferentials"
+  },
+  "Yes or No": {
+    "prefix": "YesNo",
+    "body": [
+      "Yes:",
+      "  cout << \"Yes\" << endl;",
+      "  return;",
+      "No:",
+      "  cout << \"No\" << endl;",
+      "  return;"
+    ],
+    "description": "Yes or No"
+  },
+  "YES or NO": {
+    "prefix": "YESNO",
+    "body": [
+      "Yes:",
+      "  cout << \"YES\" << endl;",
+      "  return;",
+      "No:",
+      "  cout << \"NO\" << endl;",
+      "  return;"
+    ],
+    "description": "YES or NO"
   }
 }
