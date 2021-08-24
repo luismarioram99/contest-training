@@ -15,4 +15,146 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  "Union Find Disjoint Set": {
+    "prefix": "UFDS",
+    "body": [
+      "class UnionFind {",
+      "private:",
+      "  vi p;",
+      "  vi h;",
+      "  int c;",
+      "",
+      "public:",
+      "  UnionFind(int n) {",
+      "    p.resize(n);",
+      "    h.resize(n, 1);",
+      "",
+      "    for (int i = 0; i < n; i++)",
+      "      p[i] = i;",
+      "",
+      "    c = n;",
+      "  }",
+      "",
+      "  int find(int e) {",
+      "    if (e == p[e])",
+      "      return e;",
+      "",
+      "    return (p[e] = find(p[e]));",
+      "  }",
+      "",
+      "  bool check(int u, int v) {",
+      "    int pu = find(u);",
+      "    int pv = find(v);",
+      "",
+      "    return pu == pv;",
+      "  }",
+      "",
+      "  bool join(int u, int v) {",
+      "    if (check(u, v)) {",
+      "      return false;",
+      "    }",
+      "",
+      "    int pu = find(u);",
+      "    int pv = find(v);",
+      "",
+      "    if (h[pu] < h[pv])",
+      "      swap(pu, pv);",
+      "",
+      "    if (h[pu] == h[pv])",
+      "      h[pu]++;",
+      "",
+      "    p[pv] = pu;",
+      "    c--;",
+      "    return true;",
+      "  }",
+      "  int count() { return c; }",
+      "};",
+      ""
+    ],
+    "description": "Union Find Disjoint Set"
+  },
+  "CPP Contest": {
+    "prefix": "contest",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "",
+      "using namespace std;",
+      "",
+      "typedef long long ll;",
+      "typedef vector<ll> vl;",
+      "typedef pair<ll, ll> pl;",
+      "typedef vector<pl> vll;",
+      "",
+      "typedef vector<int> vi;",
+      "typedef pair<int, int> ii;",
+      "typedef vector<ii> vii;",
+      "",
+      "#define F first",
+      "#define S second",
+      "",
+      "void solve() {",
+      "  ",
+      "}",
+      "",
+      "int main() {",
+      "  // make cin and cout input and output faster",
+      "  ios_base::sync_with_stdio(false);",
+      "  cin.tie(NULL);",
+      "",
+      "  int t = 1;",
+      "  cin >> t;",
+      "  while (t--)",
+      "    solve();",
+      "}"
+    ],
+    "description": "CPP Contest"
+  },
+  "sort-vector": {
+    "prefix": "sort",
+    "body": ["sort(${1:v}.begin(), ${1:v}.end())"],
+    "description": "sort-vector"
+  },
+
+  "beginend": {
+    "prefix": ["beginend", "begin"],
+    "body": ["${1:v}.begin(), ${1:v}.end()"],
+    "description": "beginend"
+  },
+  "8 tiles diferentials": {
+    "prefix": ["8dx", "8dy", "dif"],
+    "body": [
+      "int dx[] = {0, 1, 1, 1, 0, -1, -1, -1};",
+      "int dy[] = {-1, -1, 0, 1, 1, 1, 0, -1};"
+    ],
+    "description": "8 tiles diferentials"
+  },
+  "4 tiles diferentials": {
+    "prefix": ["4dx", "4dy", "dif"],
+    "body": ["int dx[] = {-1, 0, 1, 0};", "int dy[] = {0, 1, 0, -1};"],
+    "description": "4 tiles diferentials"
+  },
+  "Yes or No": {
+    "prefix": "YesNo",
+    "body": [
+      "Yes:",
+      "  cout << \"Yes\" << endl;",
+      "  return;",
+      "No:",
+      "  cout << \"No\" << endl;",
+      "  return;"
+    ],
+    "description": "Yes or No"
+  },
+  "YES or NO": {
+    "prefix": "YESNO",
+    "body": [
+      "Yes:",
+      "  cout << \"YES\" << endl;",
+      "  return;",
+      "No:",
+      "  cout << \"NO\" << endl;",
+      "  return;"
+    ],
+    "description": "YES or NO"
+  }
 }

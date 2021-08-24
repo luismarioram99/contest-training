@@ -14,7 +14,13 @@ typedef vector<ii> vii;
 #define F first
 #define S second
 
-void solve() {}
+void solve() {
+  int s;
+  cin >> s;
+
+  int res = ceil(sqrt(s));
+  cout << res << endl;
+}
 
 int main() {
   // make cin and cout input and output faster
