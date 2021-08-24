@@ -7,9 +7,19 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
+
 void solve(){
   int a, b;
   cin >> a >> b;
+  
+  int d = abs(a - b)/2;
+  vi ans;
+  for(int i = d; i <= a + b - d; i += (2 - (a+b)%2)){
+    ans.push_back(i);
+  }
+  cout << ans.size() << endl;
+  for(auto &x: ans) cout << x << " ";
+  cout << endl;
 }
 
 int main() {
