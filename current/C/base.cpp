@@ -7,7 +7,40 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
+#define F first
+#define S second
+
 void solve(){
+  int n, k, enemy;
+  cin >> n;
+  vector<ll> dif(n);
+  vl caves(n);
+
+  vector<pair<ll,ll>> dc(n);
+
+  for(int i = 0; i < n; i++){
+    cin >> k; 
+    caves[i] = k;
+
+    dif[i] = -1;
+    for(int j = 0; j < k; j++){ 
+      cin >> enemy;
+      int q = dif[i];
+      dif[i] = max(q, enemy - j);
+    }
+
+  }
+
+  for(int i = 0; i < n; i++){
+    dc[i] = {dif[i], caves[i]};
+  }
+  
+  sort(dc.begin(), dc.end());
+
+  for(auto x: dc) cout << x.F << " ";
+  cout <<endl;
+
+  
 
 }
 

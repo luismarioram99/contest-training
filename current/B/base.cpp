@@ -8,7 +8,8 @@ typedef pair<int, int> ii;
 typedef vector<ii> vii;
 
 void solve(){
-
+  int a, b;
+  cin >> a >> b;
 }
 
 int main() {
