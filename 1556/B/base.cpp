@@ -38,20 +38,35 @@ void solve() {
     return;
   }
 
-  int total = 0;
-  int sup = 1;
+  int total1 = 0;
+  int sup = 0;
+  int def = 1;
 
-  int def = 1 - a[0];
-
-  for(int i = 1; i < n; i++){
+  for(int i = 0; i < n; i++){
 
     if(a[i] == def){
-      total += abs(i - sup);
+      total1 += abs(i - sup);
       sup += 2;
     }
 
   }
-  cout << total << endl;
+
+  int total0 = 0;
+  sup = 0;
+  def = 0;
+
+  for(int i = 0; i < n; i++){
+
+    if(a[i] == def){
+      total0 += abs(i - sup);
+      sup += 2;
+    }
+
+  }
+
+  // cout << total0 << " " << total1 << endl;
+
+  cout << min(total1, total0) << endl;
 
 }
 
