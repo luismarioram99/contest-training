@@ -156,5 +156,10 @@
       "  return;"
     ],
     "description": "YES or NO"
+  },
+  "visited-define": {
+    "prefix": "visited",
+    "body": ["#define VISITED 1", "#define UNVISITED 0"],
+    "description": "visited-define"
   }
 }
