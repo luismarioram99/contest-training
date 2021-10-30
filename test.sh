@@ -4,7 +4,7 @@
 # the second one is the name of the problem to run
 
 cd $1/$2
-make
-./base < input.in > output.out
+echo "Testing $1/$2" 
+./test.sh < input.in > output.out
 cat output.out
 
